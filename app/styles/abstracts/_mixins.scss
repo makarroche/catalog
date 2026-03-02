@@ -1,0 +1,99 @@
+@use "./variables" as *;
+
+
+@mixin badge-base {
+  @include flex();
+  border-radius: 41px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: $badge-text;
+}
+
+@mixin flex($justify: center, $align: center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-layout($direction: row, $position: relative) {
+  display: flex;
+  flex-direction: $direction;
+  position: $position;
+}
+
+
+@mixin button-base {
+   @include flex();
+  cursor: pointer;
+  border-radius: $button-radius;
+  padding: $button-padding-y $button-padding-x;
+  font-weight: 500;
+  transition: opacity $transition-default;
+}
+
+@mixin card-container {
+@include flex(space-between, stretch, column);
+  border-radius: $card-radius;
+  background-color: $card-bg;
+  box-shadow: $card-shadow;
+}
+
+@mixin hover-scale($value: 1.05) {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale($value);
+  }
+}
+
+@mixin button-base-pagination {
+  font-size: 1rem;
+  padding: $pagination-padding-y $pagination-padding-x;
+  border-radius: $pagination-radius;
+  border: 1px solid $pagination-border;
+  color: $pagination-text;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-color: $pagination-hover-bg;
+    color: $pagination-hover-text;
+  }
+
+  &:disabled {
+    opacity: $pagination-disabled-opacity;
+    cursor: not-allowed;
+  }
+}
+
+@mixin active-button {
+  color: $pagination-active-text;
+}
+
+@mixin tab-button {
+  font-size: 1rem;
+  padding: $tab-padding-y $tab-padding-x;
+  border-radius: 9999px;
+  min-width: $tab-min-width-mobile;
+  transition: $tab-transition;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.25rem;
+
+  @media (min-width: 768px) {
+    min-width: $tab-min-width-md;
+  }
+}
+
+@mixin tab-active {
+  background-color: $tab-active-bg;
+  color: $tab-active-color;
+}
+
+@mixin tab-hover {
+  &:hover {
+    background-color: $tab-hover-bg;
+  }
+}

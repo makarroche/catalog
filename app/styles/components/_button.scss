@@ -1,0 +1,17 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.button {
+  @include button-base;
+  border: 1px solid $button-border;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 115px;
+    max-width: 260px;
+    width: auto;
+  }
+}

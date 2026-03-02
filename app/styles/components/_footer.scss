@@ -1,0 +1,16 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.footer {
+  padding: $footer-padding;
+
+  &__inner {
+   @include flex(flex-end, center);
+    gap: 1rem;
+    color: $footer-text-color;
+  }
+
+  p {
+    margin: 0;
+  }
+}

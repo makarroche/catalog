@@ -1,0 +1,32 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+
+.badge {
+  @include badge-base;
+
+  &--action {
+    background-color: $genre-action;
+  }
+
+  &--comedy {
+    background-color: $genre-comedy;
+  }
+
+  &--drama {
+    background-color: $genre-drama;
+  }
+
+  &--horror {
+    background-color: $genre-horror;
+  }
+
+  &--adventure {
+    background-color: $genre-adventure;
+  }
+
+  &--sci-fi {
+    background-color: $genre-sci-fi;
+  }
+
+}
