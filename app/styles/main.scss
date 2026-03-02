@@ -1,0 +1,13 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+@use "./components/main-container";
+@use "./components/badge";
+@use "./components/button";
+@use "./components/card";
+@use "./components/dashboard";
+@use "./components/footer";
+@use "./components/hero";
+@use "./components/movie-detail";
+@use "./components/pagination";
+@use "./components/tabs";
+

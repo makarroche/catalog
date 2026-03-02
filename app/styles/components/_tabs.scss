@@ -1,0 +1,20 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.tabs {
+ @include flex(center, center, row, wrap);
+  border-radius: $tabs-radius;
+  gap: $tabs-gap;
+  margin: 1.5rem 0;
+
+  &__btn {
+    @include tab-button;
+    color: $tab-color;
+
+    &--active {
+      @include tab-active;
+    }
+
+    @include tab-hover;
+  }
+}

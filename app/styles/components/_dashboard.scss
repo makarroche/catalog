@@ -1,0 +1,53 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.browse {
+  @include flex(center, center, column, wrap);
+
+  margin-top: 2rem;
+  gap: 1.5rem;        
+  font-size: 1.875rem;
+  @media (min-width: 640px) {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 10rem;
+    gap: 1rem;
+    font-size: 3rem;
+  }
+
+  &__header {
+    @include flex(center, center, column);
+
+    gap: 0.5rem;
+    max-width: 315px;
+
+    @media (min-width: 768px) {
+      max-width: none;
+    }
+  }
+
+
+  &__title {
+    font-weight: 400;
+    color: white;
+  }
+
+
+  &__grid {
+    @include flex(center, stretch, row, wrap);
+
+    gap: 2rem;
+    max-width: 315px;
+
+    @media (min-width: 768px) {
+      max-width: none;
+      width: 70%;
+    }
+  }
+
+  &__empty {
+    color: white;
+  }
+}
