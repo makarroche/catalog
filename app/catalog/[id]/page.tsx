@@ -46,20 +46,20 @@ const MovieDisplay = () => {
               loading="lazy"
             />
           </div>
-
           <p>
             Director: <span>{movie.director}</span>
           </p>
         </div>
       </div>
-
-      <Image
-        className="movie-detail__image"
-        src={movie.image}
-        alt={movie.title}
-        loading="lazy"
-        fill
-      />
+      <div className="movie-detail__image-container">
+        <Image
+          className="movie-detail__image"
+          src={movie.image}
+          alt={movie.title}
+          width={200}
+          height={200}
+        />
+      </div>
     </div>
   );
 };
