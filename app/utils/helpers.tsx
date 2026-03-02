@@ -14,6 +14,8 @@ export const getBadgeColor = (genre: string) => {
       return "badge--sci-fi";
     case "adventure":
       return "badge--adventure";
+    case "fantasy":
+      return "badge--fantasy";
     default:
       return "badge--default";
   }
