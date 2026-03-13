@@ -27,13 +27,18 @@ bun dev
 Open [http://localhost:3000] with your browser to see the result.
 
 
-## Tech Stack
+## Architecture
 
-- React
-- Next.js
-- SCSS
-- Sanity
+This project demonstrates a simple catalog application built with Next.js and a headless CMS.
 
+Tech stack:
+
+- Next.js (App Router)
+- Sanity CMS
+- Tailwind / SCSS
+
+The catalog UI fetches product data from Sanity using server-side queries.
+Content can be managed through the Sanity Studio.
 
 
 
