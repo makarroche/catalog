@@ -10,10 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.21",
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.3",
     "fs": "^0.0.1-security",
     "next": "16.1.6",
+    "next-sanity": "^12.1.1",
     "node-fetch": "^2.7.0",
     "path": "^0.12.7",
     "react": "19.2.3",

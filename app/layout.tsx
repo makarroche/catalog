@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "./styles/main.scss";
+import { TanstackProvider } from "./providers/TanstackProvider";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}><TanstackProvider>{children}</TanstackProvider></body>
     </html>
   );
 }
