@@ -1,3 +1,7 @@
+import { moviesQuery } from "@/sanity/queries/movie-query";
+import { titlesQuery } from "@/sanity/queries/title";
+
+
 export const getBadgeColor = (genre: string) => {
   const normalized = genre?.toLowerCase();
 
@@ -18,5 +22,17 @@ export const getBadgeColor = (genre: string) => {
       return "badge--fantasy";
     default:
       return "badge--default";
+  }
+};
+
+
+export const getSanityQuery = (type: string) => {
+  switch (type) {
+    case "movies":
+      return moviesQuery;
+    case "title":
+      return titlesQuery;
+    default:
+      return moviesQuery;
   }
 };
