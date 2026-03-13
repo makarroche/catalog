@@ -4,10 +4,12 @@ import Image from "next/image";
 import Button from "./Button";
 import { JURASSIC_MOVIE_ID } from "../utils/constants";
 import { useNavigateToMovie } from "../hooks/useNavigateToMovie";
+import useSanityContent from "../hooks/useSanityContent";
 
 const Hero = () => {
   const { handleNavigate } = useNavigateToMovie();
 
+  const { data: sanityTitle, isLoading, error } = useSanityContent("title");
   return (
     <div className="hero">
       <div className="hero__bg">
@@ -30,7 +32,7 @@ const Hero = () => {
             height={32}
             className="w-auto h-auto"
           />
-          <span className="hero__brand-text">We love popcorn</span>
+          <span className="hero__brand-text">{sanityTitle?.title}</span>
         </div>
         <Button onClick={() => handleNavigate(JURASSIC_MOVIE_ID)}>
           Discover our favorite
