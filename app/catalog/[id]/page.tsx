@@ -1,7 +1,6 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { movies } from "../../utils/movies";
 import Button from "@/app/components/Button";
 import Image from "next/image";
 import useSanityContent from "@/app/hooks/useSanityContent";
@@ -9,7 +8,6 @@ import useSanityContent from "@/app/hooks/useSanityContent";
 const MovieDisplay = () => {
   const params = useParams();
   const movieId = params.id;
-  //const movie = movies.find((m) => m.id === Number(movieId));
   const router = useRouter();
 
   const {
