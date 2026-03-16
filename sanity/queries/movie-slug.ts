@@ -1,5 +1,5 @@
 export const movieSlugQuery = `
-*[_type == "product" && slug.current == $slug][0]{
+*[_type == "movie" && id == $slug][0]{
   id,
   title,
   year,
