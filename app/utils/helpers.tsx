@@ -1,6 +1,6 @@
 import { moviesQuery } from "@/sanity/queries/movie-query";
+import { movieSlugQuery } from "@/sanity/queries/movie-slug";
 import { titlesQuery } from "@/sanity/queries/title";
-
 
 export const getBadgeColor = (genre: string) => {
   const normalized = genre?.toLowerCase();
@@ -25,14 +25,15 @@ export const getBadgeColor = (genre: string) => {
   }
 };
 
-
-export const getSanityQuery = (type: string) => {
+export const getSanityQuery = (type: string, slug?: string) => {
   switch (type) {
     case "movies":
-      return moviesQuery;
+      return { query: moviesQuery };
+    case "movieSlug":
+      return { query: movieSlugQuery, params: { slug } };
     case "title":
-      return titlesQuery;
+      return { query: titlesQuery };
     default:
-      return moviesQuery;
+      return { query: moviesQuery };
   }
 };
