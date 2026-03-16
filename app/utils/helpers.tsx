@@ -30,7 +30,7 @@ export const getSanityQuery = (type: string, slug?: string) => {
     case "movies":
       return { query: moviesQuery };
     case "movieSlug":
-      return { query: movieSlugQuery, params: { slug } };
+      return { query: movieSlugQuery, slug: { slug } };
     case "title":
       return { query: titlesQuery };
     default:
