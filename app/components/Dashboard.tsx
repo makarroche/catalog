@@ -16,7 +16,6 @@ const Dashboard = () => {
     [],
   );
 
-
   const { data: sanityMovies, isLoading, error } = useSanityContent("movies");
 
   useDisplayMovies(sanityMovies, activeTab, setDisplayMovies);
@@ -34,10 +33,12 @@ const Dashboard = () => {
             return <Card key={movie.id} movie={movie} index={index} />;
           })}
         {Array.isArray(currentPaginatedMovies) &&
-          currentPaginatedMovies.length === 0 && (
-            <p className="browse__empty">No Movies found</p>
-          )}
+          currentPaginatedMovies.length === 0 &&
+          !isLoading &&
+          sanityMovies && <p className="browse__empty">No Movies found</p>}
       </div>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: {error.message}</p>}
       <Pagination
         displayMovies={displayMovies}
         setCurrentPaginatedMovies={setCurrentPaginatedMovies}

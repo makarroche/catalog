@@ -19,12 +19,20 @@ const MovieDisplay = () => {
     typeof movieId === "string" ? movieId : undefined,
   );
 
-  if (!movie || isNaN(Number(movieId))) {
+  if ((!movie || isNaN(Number(movieId)) || error) && !isLoading) {
     return (
       <div className="movie-detail__movie-not-found">
         <h2>Movie not found</h2>
         <p>The movie you're looking for doesn't exist.</p>
         <Button onClick={() => router.push("/")}>Go Home</Button>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="movie-detail__movie-not-found">
+        <h2>Loading...</h2>
       </div>
     );
   }
@@ -35,6 +43,7 @@ const MovieDisplay = () => {
         <Button onClick={() => router.back()}>Back</Button>
       </div>
       <div className="movie-detail__content">
+        {isLoading && <p>Loading...</p>}
         <h1 className="movie-detail__title">{movie.title}</h1>
         <p className="movie-detail__description">{movie.description}</p>
         <div className="movie-detail__info">
