@@ -46,6 +46,7 @@ Tech stack:
 - React
 - Sanity CMS
 - Tanstack React Query
+- Framer motion
 - Tailwind / SCSS
 
 The catalog UI fetches product data from Sanity using server-side queries.
