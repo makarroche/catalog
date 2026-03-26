@@ -29,6 +29,31 @@
     top: 1.25rem;
     left: 1.25rem;
   }
+  
+  &__heart {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      color: red;
+      transform: scale(1.3);
+    }
+  }
+
+  &__heart--filled {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    svg {
+      fill: red;
+      stroke: red;
+    }
+
+  }
 
   &__content {
     display: flex;
