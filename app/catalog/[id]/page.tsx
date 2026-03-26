@@ -4,6 +4,9 @@ import { useParams, useRouter } from "next/navigation";
 import Button from "@/app/components/Button";
 import Image from "next/image";
 import useSanityContent from "@/app/hooks/useSanityContent";
+import { Heart } from "lucide-react";
+import { useFavoriteStore } from "@/app/store/favorite";
+import { useFavorites } from "@/app/hooks/useFavorites";
 
 const MovieDisplay = () => {
   const params = useParams();
@@ -18,6 +21,10 @@ const MovieDisplay = () => {
     "movieSlug",
     typeof movieId === "string" ? movieId : undefined,
   );
+
+  const { favorites } = useFavoriteStore();
+
+  const toggleFavorites = useFavorites(movieId as string);
 
   if ((!movie || isNaN(Number(movieId)) || error) && !isLoading) {
     return (
@@ -69,6 +76,7 @@ const MovieDisplay = () => {
         </div>
       </div>
       <div className="movie-detail__image-container">
+        <div className="card__overlay" />
         <Image
           className="movie-detail__image"
           src={movie.image}
@@ -76,6 +84,18 @@ const MovieDisplay = () => {
           width={200}
           height={200}
         />
+        <div
+          className={
+            favorites.length > 0 &&
+            typeof movieId === "string" &&
+            favorites.includes(movieId)
+              ? "card__heart--filled"
+              : "card__heart"
+          }
+          onClick={toggleFavorites}
+        >
+          <Heart />
+        </div>
       </div>
     </div>
   );
