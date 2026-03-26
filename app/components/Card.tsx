@@ -36,6 +36,7 @@ const Card = ({ movie, index }: CardProps) => {
               className="object-cover"
               fill
               loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </motion.div>
 
