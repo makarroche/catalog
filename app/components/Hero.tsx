@@ -5,6 +5,7 @@ import Button from "./Button";
 import { JURASSIC_MOVIE_ID } from "../utils/constants";
 import { useNavigateToMovie } from "../hooks/useNavigateToMovie";
 import useSanityContent from "../hooks/useSanityContent";
+import { UserIcon } from "lucide-react";
 
 const Hero = () => {
   const { handleNavigate } = useNavigateToMovie();
@@ -34,9 +35,10 @@ const Hero = () => {
           />
           <span className="hero__brand-text">{sanityTitle?.title}</span>
         </div>
-        <Button onClick={() => handleNavigate(JURASSIC_MOVIE_ID)}>
-          Discover our favorite
-        </Button>
+        <div className="flex items-center justify-between gap-2">
+          <UserIcon />
+          <span>Login</span>
+        </div>
       </div>
       <div className="hero__content">
         <h1 className="hero__title">
@@ -48,6 +50,9 @@ const Hero = () => {
           <span>our collection or</span>
           <span>discover new favorites.</span>
         </p>
+        <Button onClick={() => handleNavigate(JURASSIC_MOVIE_ID)}>
+          Discover our favorite
+        </Button>
       </div>
     </div>
   );
